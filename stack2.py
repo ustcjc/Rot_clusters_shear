@@ -46,7 +46,7 @@ w = 1 / (1 + sourcedata['er1']**2 + sourcedata['er2']**2)
 
 
 def get_grid_idxs(ra, dec, rac, decc, z, phi):
-    dx = (ra - rac) * np.cos(decc / 180 * np.pi)  # degree
+    dx = - (ra - rac) * np.cos(decc / 180 * np.pi)  # degree
     dy = dec - decc                               # degree
     
     scale_d2Mpc = cosmo.angular_diameter_distance(z).value * h / 180 * np.pi
